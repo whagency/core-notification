@@ -1,0 +1,17 @@
+all: false
+template: testify
+formatter: goimports
+dir: .
+filename: domain_mocks.go
+pkgname: mocks
+structname: Mock{{.InterfaceName}}
+force-file-write: true
+packages:
+  notification-service/internal/domain:
+    interfaces:
+      MailerManager:
+      NotificationController:
+      UserService:
+      UserServiceGRPC:
+      WebsocketController:
+      WebsocketManager:

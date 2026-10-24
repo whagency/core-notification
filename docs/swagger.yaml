@@ -1,0 +1,17 @@
+basePath: /notification/
+info:
+  contact: {}
+  description: |-
+    API for Notification Service
+    [Read me]()
+  termsOfService: http://swagger.io/terms/
+  title: Notification Service
+  version: 1.0.0
+paths: {}
+securityDefinitions:
+  Authorization:
+    description: Provide your auth token
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

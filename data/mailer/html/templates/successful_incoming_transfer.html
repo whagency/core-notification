@@ -1,0 +1,54 @@
+{{ define "title" }}
+{{ t "successful_incoming_transfer.title" . }}
+{{ end }}
+
+{{ define "content" }}
+<tr>
+    <td>
+        <table>
+            <tr>
+                <td class="content" style="padding:32px 0 16px 0;">
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        {{ t "successful_incoming_transfer.r1" . }}
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        <strong>{{ t "common.amount" . }}:</strong>
+                        <span style="color:#FF510D;">
+                            {{ trimZeros .Message.Params.amount }} {{ .Message.Params.asset }}
+                        </span>
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:16px;">
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        <strong>{{ t "common.time" . }}:</strong>
+                        <span style="color:#FF510D;">
+                            {{ .Time }}
+                        </span>
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:16px;">
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        {{ t "successful_incoming_transfer.r2" . }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-bottom:40px">
+                    <p style="font-size:16px;color:#10101080;margin:0">{{ t "common.no_reply" . }}</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{{ end }}

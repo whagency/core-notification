@@ -1,0 +1,57 @@
+{{ define "title" }}
+{{ t "two_factor_confirm_code.title" . }}
+{{ end }}
+
+{{ define "content" }}
+<tr>
+    <td>
+        <table>
+            <tr>
+                <td class="content" style="padding:32px 0 16px 0;">
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        {{ t "two_factor_confirm_code.r1" . }}
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" style="width:100%; padding:16px 0 24px 0;">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" style="border-spacing:9px 0;">
+                        <tr>
+                            {{- range .Message.Params.CodeDigits }}
+                            <td style="
+                                background:#D9D9D94D;
+                                width:64px;
+                                height:64px;
+                                border-radius:6px;
+                                text-align:center;
+                                font-size:24px;
+                                color:#FF510D;
+                                font-weight:bold;
+                            ">
+                                {{ . }}
+                            </td>
+                            {{- end }}
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:16px;">
+                    <p style="font-size:16px; color:#000000; margin:0;">
+                        {{ t "two_factor_confirm_code.r2" . }}
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding-bottom:40px">
+                    <p style="font-size:16px;color:#10101080;margin:0">{{ t "common.no_reply" . }}</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+{{ end }}

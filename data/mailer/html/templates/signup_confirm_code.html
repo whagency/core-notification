@@ -1,0 +1,55 @@
+{{ define "title" }}
+{{ t "common.hello" . }}, <span style="color: #FF510D;">{{ .Message.To }}!</span>
+{{ end }}
+
+{{ define "content" }}
+<tr>
+    <td>
+        <table>
+            <tr>
+                <td class="content" style="padding: 40px 0;">
+                    <p style="font-size: 16px; color: #000000; margin: 0;">{{ t "signup_confirm_code.r1" . }}:</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td  style="padding-bottom: 20px;">
+                    <p style="font-size: 16px; color: #000000; margin: 0;">{{ t "signup_confirm_code.your_email" . }}: <span style="color: #FF510D;">{{ .Message.To }}!</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="width: 100%;">
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="border-spacing: 9px 0;">
+                        <tr align="left">
+                            {{- range .Message.Params.CodeDigits }}
+                            <td style="
+                                background:#D9D9D94D;
+                                width:64px;
+                                height:64px;
+                                border-radius:6px;
+                                text-align:center;
+                                font-size:24px;
+                                color:#FF510D;
+                            ">
+                                {{ . }}
+                            </td>
+                            {{- end }}
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 40px 0 20px 0;">
+                    <p style="font-size: 16px; color: #000000;margin: 0;">{{ t "common.best_wishes" . }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-bottom: 40px;">
+                    <p style="font-size: 16px; color: #10101080;margin: 0;">{{ t "common.subscribe" . }}</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{{ end }}
